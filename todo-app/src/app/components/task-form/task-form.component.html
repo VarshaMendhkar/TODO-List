@@ -1,0 +1,30 @@
+<div class="task-form">
+    <h2>{{ isEditMode ? 'Edit Task' : 'New Task' }}</h2>
+  
+    <label>Assigned To:</label>
+    <input [(ngModel)]="task.assignedTo" />
+  
+    <label>Status:</label>
+    <select [(ngModel)]="task.status">
+      <option>Not Started</option>
+      <option>In Progress</option>
+      <option>Completed</option>
+    </select>
+  
+    <label>Due Date:</label>
+    <input type="date" [(ngModel)]="task.dueDate" />
+  
+    <label>Priority:</label>
+    <select [(ngModel)]="task.priority">
+      <option>Low</option>
+      <option>Normal</option>
+      <option>High</option>
+    </select>
+  
+    <label>Comments:</label>
+    <textarea [(ngModel)]="task.comments"></textarea>
+  
+    <button (click)="onSave()">Save</button>
+    <button (click)="router.navigate(['/'])">Cancel</button>
+  </div>
+  
